@@ -2,7 +2,19 @@
     font-family: 'Lexend', sans-serif;
 }
 
+h1 {
+    margin: 80px 0px 30px 0px;
+    text-align: center;
+}
+
+#griglia{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
 .container {
+    height: fit-content;
+    padding: 25px 0;
     width: 900px;
     margin: auto;
     background-color: rgba(22, 104, 228, 0.925);
@@ -10,6 +22,8 @@
 
 .text-center {
     text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .icon-grid {
@@ -19,10 +33,10 @@
     flex-wrap: wrap;
 }
 
-.show {
+/* .show {
     visibility: visible;
     opacity: 1;
-}
+} */
 
 #griglia>div {
     width: 100px;
@@ -120,7 +134,7 @@
     }
 
     .icon {
-        font-size: 60px;
+        font-size: 50px;
     }
 }
 

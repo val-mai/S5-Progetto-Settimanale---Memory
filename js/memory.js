@@ -11,9 +11,12 @@ document.body.onload = startGame();
 // 3. una agganciata al'id modal 4. una agganciata alla classe timer
 
 var interval;
-let find = document.querySelectorAll('.find');
+
+let find = document.getElementsByClassName("find");
+
 let modal = document.querySelector('#modal');
 let timer = document.querySelector('.timer');
+
 
 //una funzione che serve a mescolare in modo random gli elementi dell'array che viene passato 
 // (l'array contiene le icone degli animali)
@@ -46,12 +49,12 @@ function playAgain(){
 
 function startGame(){
     clearInterval(interval);
-    arr = [];
+    arrayComparison = [];
     let arrayShuffle = shuffle(arrayAnimali);
     let griglia = document.querySelector('#griglia');
-    /* qui bisogna ancora svuotare la griglia */
+    griglia.innerHTML ='';
     for (const animal of arrayShuffle) {
-        let griglia = document.querySelector('#griglia');
+        
         let tessera = document.createElement('div');
         let icona = document.createElement('div');
         icona.className = 'icon';
@@ -66,6 +69,7 @@ function startGame(){
 
     for (const icon of icons) {
         icon.addEventListener('click', displayIcon);
+        icon.addEventListener('click', fineGioco);
     }
 }
 
@@ -122,7 +126,17 @@ function displayIcon() {
 
 //una funzione che viene mostrata alla fine quando sono tutte le risposte esatte
 
+function fineGioco(){  
+    if (find.length === 24){
+        clearInterval(interval);
+        modal.classList.add('active');
+        document.querySelector('#tempoTrascorso').innerHTML = timer.lastChild.innerHTML;
+    }
+  }
+
 // una funzione che nasconde la modale alla fine e riavvia il gioco
+
+        // la funzione playAgain() chiude già la modale e riavvia il gioco 
 
 // una funzione che calcola il tempo e aggiorna il contenitore sotto
 
@@ -133,7 +147,7 @@ function startTimer(){
     let h=0;
 
     interval = setInterval(function(){
-    timer.innerHTML = 'Tempo: ' + m + " min " + s + " sec";
+    timer.lastChild.innerHTML = m + " min " + s + " sec";
       s++;
       if(s == 60){
         m++;
