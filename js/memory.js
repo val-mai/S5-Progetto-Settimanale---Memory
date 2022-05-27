@@ -12,7 +12,6 @@ document.body.onload = startGame();
 
 var interval;
 let find = document.querySelectorAll('.find');
-
 let modal = document.querySelector('#modal');
 let timer = document.querySelector('.timer');
 
@@ -56,7 +55,8 @@ function startGame(){
         let tessera = document.createElement('div');
         let icona = document.createElement('div');
         icona.className = 'icon';
-        griglia.appendChild(tessera).appendChild(icona)
+        griglia.appendChild(tessera)
+        tessera.appendChild(icona)
         icona.innerHTML = animal;
     }
     startTimer();

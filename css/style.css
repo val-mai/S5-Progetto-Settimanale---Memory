@@ -53,8 +53,8 @@
 }
 
 .show {
-    visibility: visible;
-    opacity: 100;
+    visibility: visible; /* Inseriti qui per problemi di conflitto */
+    opacity: 1;
     animation-name: rotazione;
     animation-timing-function: ease-in;
     animation-duration: .5s;
