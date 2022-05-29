@@ -5,7 +5,7 @@ let arrayAnimali = ['🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '�
 
 let arrayComparison = [];
 
-document.body.onload = startGame();
+/* document.body.onload = startGame(); */  //Sostituito dal pulsante 
 
 // mi serviranno alcune variabili 1. interval 2. una agganciata alla classe find 
 // 3. una agganciata al'id modal 4. una agganciata alla classe timer
@@ -49,6 +49,9 @@ function playAgain(){
 
 function startGame(){
     clearInterval(interval);
+    let button = document.querySelector('#button');
+    button.value = 'Ricomincia';
+    timer.style.display = "block";
     arrayComparison = [];
     let arrayShuffle = shuffle(arrayAnimali);
     let griglia = document.querySelector('#griglia');
@@ -92,6 +95,8 @@ function displayIcon() {
 
     //mette/toglie la classe show
     this.classList.toggle("show");
+    this.classList.toggle("disabled"); //Previene il doppio click sulla stessa tessera
+    
     //aggiunge l'oggetto su cui ha cliccato all'array del confronto
     arrayComparison.push(this);
 
