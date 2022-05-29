@@ -1,5 +1,6 @@
 * {
     font-family: 'Lexend', sans-serif;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -101,7 +102,7 @@ h1 {
 
 .button:hover {
     background-color: #16486c;
-    border: none;
+    border: 1px solid #16486c;
 }
 
 #modal {
@@ -157,8 +158,6 @@ h1 {
 }
 
 @keyframes indovinato {
-
-    /* animazione quando si indovina */
     from {
         transform: rotate(0deg) scale(1.2);
     }
