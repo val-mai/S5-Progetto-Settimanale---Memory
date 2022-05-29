@@ -83,7 +83,7 @@ h1 {
     animation-timing-function: ease-in;
     animation-duration: .5s;
     background-color: rgba(247, 212, 16, 0.56);
-    border: 1px solid #3889c4;
+    border: 1px solid rgba(247, 212, 16, 0.56);
     border-radius: 10px;
 }
 

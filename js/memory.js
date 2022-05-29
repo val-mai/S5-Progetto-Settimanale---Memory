@@ -149,7 +149,6 @@ function startTimer(){
     
     let s=0;
     let m=0;
-    let h=0;
 
     interval = setInterval(function(){
     timer.lastChild.innerHTML = m + " min " + s + " sec";
@@ -157,10 +156,6 @@ function startTimer(){
       if(s == 60){
         m++;
         s = 0;
-      }
-      if(m == 60){
-        h++;
-        m = 0;
       }
     },1000);
   }
